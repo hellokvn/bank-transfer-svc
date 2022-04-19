@@ -1,4 +1,30 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/bank-transfer-svc/src",
+  "monorepo": true,
+  "root": "apps/bank-transfer-svc",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/bank-transfer-svc/tsconfig.app.json"
+  },
+  "projects": {
+    "bank-transfer-svc": {
+      "type": "application",
+      "root": "apps/bank-transfer-svc",
+      "entryFile": "main",
+      "sourceRoot": "apps/bank-transfer-svc/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/bank-transfer-svc/tsconfig.app.json"
+      }
+    },
+    "command": {
+      "type": "application",
+      "root": "apps/command",
+      "entryFile": "main",
+      "sourceRoot": "apps/command/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/command/tsconfig.app.json"
+      }
+    }
+  }
 }
